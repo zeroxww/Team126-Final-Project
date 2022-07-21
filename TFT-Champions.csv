@@ -1,0 +1,76 @@
+﻿Name,Trait_1,Trait_2,Trait_3,Ability_Name,Description,Cost
+Ao Shin,Tempest,Dragon,,Lightning Rain,Ao Shin fires a barrage of 20 lightning strikes at random enemies. Each strike deals magic damage and drains 20 Mana from his target.,10
+Bard,Guild,Bard,Mystic,Tempered Fate,"Bard sends magical energy toward the largest group of enemies, stunning them for a few seconds and causing them to take increased damage while stunned. If he hits at least 1 enemy, Bard dances in celebration.",5
+Ornn,Tempest,Bruiser,Legend,Stampede,"Ornn summons an elemental that charges towards Ornn through the farthest enemy, dealing magic damage to enemies hit and slowing their Attack Speed by 50% for 2 seconds. When the elemental reaches Ornn, he redirects it towards another distant enemy, dealing magic damage to enemies hit and stunning them.",4
+Yasuo,Mirage,Dragonmancer,Warrior,Sweeping Blade,"Yasuo shields himself for 2 seconds and dashes through his target, slashing nearby enemies for a % of his Attack Damage. Every third cast, his slash deals 250% damage, hits a larger area, and knocks up enemies for 1.5 seconds. If Yasuo hits only the last enemy left alive, he repeatedly slashes them until they die.",5
+ Aurelion Sol,Astral,Dragon,Evoker,Black Hole,"Aurelion Sol now summons an unstable black hole underneath a random enemy. After 2 seconds it implodes, dealing magic damage to all enemies in the area and increasing their damage taken by 20% for 10 seconds. Black holes generated after 20 seconds of combat are larger and deal 50% more damage.",10
+Daeja,Mirage,Dragon,,Windblast,"Passive: Daeja's attacks launch three barrages and deal bonus magic damage and reduce the target's Magic Resist by 5. Active: Daeja sends a wind blast toward the largest group of enemies, dealing magic damage.",8
+Ezreal,Tempest,Swiftshot,,Mystic Shot,"Ezreal fires an energy bolt towards his target. The first enemy hit takes magic damage and grants Ezreal 10% bonus Attack Speed, stacking up to 5 times.",1
+Hecarim,Ragewing,Cavalier,,Onslaught of Shadows,"Hecarim summons spectral riders that charge through his target, dealing magic damage and stunning enemies hit.",4
+Idas,Shimmerscale,Dragon,Guardian,Golden Scales,"Idas hardens her scales for 2 seconds, reducing incoming damage. She then roars, healing herself and shielding other allies for 5 seconds. The shield grants 30% attack speed while it holds.",8
+Illaoi ,Astral,Bruiser,,Cosmic Lash,"Illaoi slams her idol into the ground, summoning 3 tentacles that lash out, dealing magic damage to enemies in a cone. Illaoi steals 33% Armor and Magic Resist from each enemy hit for 5 seconds.",3
+Lee Sin,Tempest,Dragonmancer,,Dragon's Rage,"Lee Sin kicks his target, stunning them for 1.5 seconds and knocking them back. The target and all enemies they hit take magic damage.",3
+Lulu,Trainer,Mystic,Evoker,Whimsy,"Lulu enchants the nearest units. Enchanted allies gain Attack Speed for 5 seconds. Enchanted enemies are stunned and transformed into harmless dragonlings for 1.5 seconds, taking 20% increased damage while stunned. If there are fewer units nearby, Lulu will enchant herself.",3
+Nami,Astral,Mage,Mystic,Ebb and Flow,"Nami launches a stream of water at her target that bounces to 2 additional targets, prioritizing low Health targets and alternating between enemies and allies. Enemies hit take magic damage and allies hit heal.",2
+Neeko,Jade,Shapeshifter,,Inherent Glamour,"Each Combat: Neeko disguises herself as the nearest allied champion, adding their bonus Attack Damage and Attack Speed to her own and copying all other stats except Health. She then gains a shield for an amount plus a % of her ally's Health.
+When the shield breaks she transforms into Neeko Form, reverts back to her own stats, and casts Pop Blossom, dealing magic damage to nearby enemies and stunning them for 1.5 seconds. Neeko then casts Pop Blossom each time she reaches maximum mana.",4
+Nadalee,Astral,Shapeshifter,,Primal Surge,"Nidalee transforms into Cougar Form for the rest of combat, reducing her Attack Range to 1 and gaining bonus movement speed and Attack Speed. While in cougar form, every 3rd attack swipes her target dealing 225% of her Attack Damage.",1
+Pyke,Whispers,Assassin,,Death From Below,"Pyke dives toward the lowest Health enemy and slashes in an X, dealing magic damage to his target and magic damage to other enemies struck. Enemies hit suffer 50% reduced healing for 8 seconds.
+If Pyke hits an enemy at or below % Health he executes them and immediately recasts Death From Below.",5
+Qiyana,Tempest,Assassin,,Elemental Blade,"Qiyana dashes to the best position to strike enemies with her blade, dealing magic damage in a short line and disarming enemies hit.",2
+Ryze,Guild,Mage,,Overload,"Ryze hurls 1 arcane orb at his target, dealing a % of his maximum Mana. Each cast increases his maximum Mana by 20 and the number of orbs thrown by 1.",3
+Shen,Ragewing,Bruiser,Warrior,Flame's Refuge,"Shen creates a zone around himself, in which all nearby allies dodge Basic Attacks. While it's active, Shen gains Magic Resist.",2
+Shi Oh Yu,Jade,Mystic,Dragon,Jade Form,"Shi Oh Yu enters Jade stance, gaining damage reduction, immunity to crowd control, and empowering her next 3 attacks with special effects that deal a % of her Attack Damage.
+Attack 1: Deals damage and knocks the target into the air for 1.25 second.
+Attack 2: Deals true damage.
+Attack 3: Ends the stance, dealing damage to all enemies in a line and knocking them up for 1.25 seconds.",8
+Shyvana,Ragewing,Shapeshifter,Dragon,Dragon's Descent,"Shyvana transforms into Dragon Form for the rest of combat, replacing her ability with Flame Breath. She then becomes untargetable before dive-bombing the largest group of enemies, dealing magic damage and stunning them for 1.5 seconds.
+Flame Breath: Shyvana breathes fire in a cone, dealing % of the enemy's maximum Health as magic damage.",10
+Sona,Revel,Evoker,,Crescendo,"Sona plays her ultimate chord toward the farthest enemy, dealing magic damage to enemies and stunning them.",4
+Soraka,Jade,Starcaller,,Starfall,"Passive: While any ally is below 50% Health, Soraka gains an additional 15 mana per attack.
+
+Active: Soraka calls down a shower of stars over the next 2 seconds. Allies are healed each time a star hits them.",5
+Syfen,Whispers,Bruiser,Dragon,Rampage,"Sy'fen charges towards the farthest enemy within 2 hexes, dealing a % of his Attack Damage and knocking up enemies they pass through.
+
+After charging, Sy'fen bites an enemy dealing a % of his Attack Damage and ignoring 50% of the target's Armor.",8
+Sylas,Whispers,Mage,Bruiser,Petricite Burst,"Sylas whirls his chains, dealing magic damage to enemies hit and gaining a shield for 6 seconds. If this hits while the shield persists, this hits a larger area and applies Mana-Reave to enemies hit, increasing the cost of their next ability by 35%.",3
+Talon,Guild,Assassin,,Shadow Assault,"Talon stealths for 1.5 seconds and flings out a ring of blades, dealing a % of his Attack Damage to enemies hit. He then leaps to the farthest enemy within 4 hexes and recalls the blades, dealing that damage again and dealing 325% of his Attack Damage plus bonus physical damage to his target.",4
+Varus,Astral,Swiftshot,,Chain of Constellations,"Varus sends out a cosmic tendril towards his target that strikes the first enemy hit, dealing 250% of his Attack Damage and stunning them. Tendrils then spread to 3 nearby enemies, dealing magic damage and stunning them for the remainder of the duration.",3
+Xayah,Ragewing,Swiftshot,,Feathers FLY!,"For 4 seconds, Xayah's attacks she fires a feather behind her target and nearby enemies.
+
+At the end of this duration, Xayah recalls her feathers, dealing a % of her Attack Damage plus bonus physical damage per feather to enemies struck.",4
+Zoe,Shimmerscale,Spell-Thief,Mage,Nothing!,Zoe nabs a spell from another dimension and casts it as if it were her own.,5
+Anivia,Jade,Evoker,Legend,Prismatic Storm,"Anivia summons a prismatic storm around her target, dealing magic damage over 3 seconds. Enemies in the storm have their Magic Reisist reduced by 40%.",3
+Ashe,Jade,Dragonmancer,Swiftshot,Volley,Ashe fires a volley of 6 arrows. Enemies hit take magic damage and suffer 30% reduced Attack Speed for 3 seconds.,2
+Corki,Revel,Cannoneer,,Missile Barrage,"Corki launches a barrage of 4 missiles at his target, each dealing 60% of his Attack Damage. The final missile is The Big One and deals a % of Attack damage plus bonus magic damage in a large area.",4
+Diana,Scalescorn,Assassin,,Pale Cascade,"Diana shields herself for 6 seconds and summons number of orbs around her. These orbs burst dealing magic damage when they hit an enemy. When the final orb bursts, her shield refreshes.",3
+Elise,Whispers,Shapeshifter,,Spider Form,"Elise transforms into Spider Form for the rest of combat, reducing her Attack Range to 1 and replacing her ability with Venomous Bite, which she immediate casts.
+Venemous Bite: Elises's next attack deals bonus magic damage. If this kills her target she ascends, becoming untargetable before dropping near the lowest Health enemy and immediately casting Venomous Bite again.",3
+Gnar,Jade,Shapeshifter,,Mega Gnar,"Gnar tarnsforms into Mega Form, jumping to his target and knocking up nearby enemies for 1 second. Gnar also gains Attack Damage and Armor, but reduces his Attack Range to 1.",2
+Heimerdinger,Trainer,Mage,,Egg Toss,"Heimerdinger lobs an egg at the highest percent Health enemy, dealing magic damage and stunning them.",1
+Jinx,Revel,Cannoneer,,Flame Chompers,"Jinx summons a line of traps centered on her target. Traps detonate after a brief delay, dealing magic damage and stunning enemies hit. Jinx gains 10 mana for each empty trap.",2
+Karma,Jade,Dragonmancer,,Inner Flame,"Karma fires a burst of energy towards her target, dealing magic damage in a small area around the first enemy hit.",1
+Lillia,Scalescorn,Cavalier,Mage,Watch Out!,"Lillia strikes a small area around her target's current location, dealing magic damage spread amongst all enemies hit and bonus magic damage to the enemy at the center of the blast.",2
+Nunu,Mirage,Cavalier,,Consume,"Nunu encourages Willump to bite his target, dealing magic damage. If Willump's target has less Health than he does before the bite, it deals an additional 33% damage and becomes true damage.",3
+Olaf,Scalescorn,Bruiser,Warrior,Recklessness,"Passive: Olaf seeks glorious death, permanently gaining 5 Attack Damage (10 in Hyper Roll) whenever he dies.
+
+Active: Olaf strikes his target, dealing 200% of his Attack Damage and gaining Attack Speed for 6 seconds. If he's below 50% Health, the Attack Speed is doubled.",3
+Swain,Ragewing,Dragonmancer,Shapeshifter,Draconic Ascension,"Swain transforms into Dragon Form, replacing his attacks with fireballs that deal magic damage and replacing his Ability with Greater Fireball.
+
+Greater Fireball: Swain's next fireball deals 100% more damage and explodes in an area around his target.",3
+Thresh,Whispers,Guardian,,Death Sentence,"Thresh hooks the farthest enemy, dealing magic damage, stunning them for 2 seconds and pulling them towards himself over the duration.",2
+Tristana,Trainer,Cannoneer,,Explosive Charge,"Tristana fires up to 2 explosive charges, prioritizing the closest targets without a charge. Charges detonate after 1 second, dealing a % of her Attack Damage to nearby enemies and bonus magic damage to the target.",2
+Twitch,Guild,Swiftshot,,Blast Potion,"Twitch hurls an exploding flask at his target, dealing a % of his Attack Damage plus bonus magic damage and reducing the Armor of enemies hit by 40% for 5 seconds.",2
+Volibear,Shimmerscale,Dragonmancer,Legend,Relentless Storm,"Volibear rages, gaining bonus Health. For the rest of combat, every 3rd attack deals bonus magic damage to the target, and magic damage to additional enemies.",3
+Yone,Mirage,Warrior,,Way of the Hunter,Passive: Yone's basic attacks alternate between dealing bonus magic damage and dealing 33% of his Attack Damage.,2
+Aatrox,Shimmerscale,Warrior,,Deathbringer Strike,"Aatrox strikes his target for a % of his Attack Damage, and heals himself.",1
+Braum,Scalescorn,Guardian,,Unbreakable,"Braum raises his shield for 4 seconds, reducing his damage taken from that direction.",2
+Kayn,Ragewing,Shimmerscale,Assassin,Blade's Reach,"Kayn sweeps his scythe in a line through his target, dealing 250% of his Attack Damage to enemies hit and additional magic damage to the first enemy hit.",2
+Leona,Mirage,Guardian,,Solar Barrier,"Leona creates a barrier around herself, reducing all incoming damage for 4 seconds.",1
+Senna,Ragewing,Cannoneer,,Last Embrace,"Senna launches black mist toward the farthest enemy, striking the first enemy hit and dealing 200% of her Attack Damage on a small area. The first enemy hit is dealt bonus magic damage.",1
+Sett,Ragewing,Dragonmancer,,Knuckle Down,"For the next 4 seconds, Sett gains Armor and Magic Resist, and every other punch deals 150% of his Attack Damage as bonus physical damage.",1
+Skarner,Astral,Bruiser,,Crystalline Exoskeleton,"Skarner shields himself for 8 seconds, and gains Attack Speed while it holds.",1
+Tahm Kench,Revel,Bruiser,,Thicker Skin,Tahm Kench shields himself base shield amount plus 10% maximum Health for 6 seconds. The next 3 enemy attacks he receives during this duration deal magic damage to the attacker.,1
+Taric,Jade,Guardian,,Bastion,Taric grants himself and his closest ally a protective rune that increases Armor for 6 seconds.,1
+Vladmir,Astral,Mage,,Transfusion,Vladimir deals magic damage to his target and heals himself.,1
+Sejuani,Guild,Cavalier,,Warrior's Wrath,"Sejuani swings her mace wide, hitting all enemies in a cone for magic damage based on a % of her maximum Health. She quickly strikes again, repeating the damage on her target and the enemy directly behind it and stunning them.",1
