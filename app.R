@@ -2,11 +2,14 @@ library(shiny)
 library(shinydashboard) 
 library(leaflet)
 library(DT)
+library(bubbles)
 library(plotly)
 
 
 # read data
-# data = read.csv("data.csv")
+data = read.csv("euw1_challengers_12.12.450.4196_matches.csv")
+data_champion = read.csv("TFT-Champions.csv")
+data_trait = read.csv("Champtrait.csv")
 
 # UI part
 ui <- dashboardPage(
@@ -15,39 +18,65 @@ ui <- dashboardPage(
     
     dashboardHeader(title = "TFT Revolution"),
     dashboardSidebar(
-        # sidebarSearchForm(textId = "searchText", buttonId = "searchButton",label = "Search..."),
         sidebarMenu(
             menuItem("Overview", tabName = "page1", icon = icon("line-chart")),
             menuItem("Database", tabName = "page2", icon = icon("area-chart"),
                      startExpanded = TRUE,
                      menuSubItem("Champions",tabName = "subpage1"),
-                     menuSubItem("Items",tabName = "subpage2"),
-                     menuSubItem("Synergies",tabName = "subpage3")
+                     menuSubItem("Synergies",tabName = "subpage2")
                      ),
             menuItem("Team Comps", tabName = "page3", icon = icon("map-o")),
-            menuItem("Github Link", tabName = "page4", icon = icon("bar-chart-o"))
+            menuItem("Github Link",icon = icon("bar-chart-o"), href = "https://github.com/zeroxww/Team126-Final-Project")
         )
     ),
+    
     dashboardBody(
         tabItems(
             tabItem(tabName = "page1",
-                    box(title = "About the Application", status = "primary", 
+                    box(title = "Description", status = "primary", 
                         solidHeader = TRUE, 
                         collapsible = TRUE,
                         width = 12,
-                        textOutput("text1")
+                        tags$figure(align = "center",
+                                    tags$img(src = "tft_set7.jpg",width = 600),
+                                   ),
+                        p(),
+                        p("Welcome to our Teamfight Tactics Helper for Season 7, Dragonlands."),
+                        p("These infographics will give you an easy reference to start this new season and climb to a higher rank."),
+                        p("By taking thousands of high-elo rank games from the League of Legends North America Server, we are able to discover the best way to play this game."),
+                        p("You will get a trait overview, an item cheat sheet, and comp recommendations on our webpage.")
                         ),
-                    box(title = "Dataset Information", status = "success", 
+                    
+                    box(title = "About Teamfight Tactics (TFT)", status = "success", 
                         solidHeader = TRUE, 
                         collapsible = TRUE,
                         width = 12,
-                        textOutput("text2"),
+                        tags$figure(align = "center",
+                                    tags$img(src = "tft_set7.jpg",width = 600),
                         ),
-                    box(title = "Group Members", status = "warning", 
+                        p(),
+                        p("Teamfight Tactics (TFT) is an auto battler game developed and published by Riot Games. The game is a spinoff of League of Legends and is based on Dota Auto Chess, where players compete online against seven other opponents by building a team to be the last one standing."),
+                        p("Draft, deploy, and dominate with a revolving roster of League of Legends champions in a round-based battle for supremacy. Outsmart your opponents and adapt as you go—the strategy is all up to you."),
+                        ),
+                    
+                    box(title = "About Season 7 (S7)", status = "danger", 
                         solidHeader = TRUE, 
                         collapsible = TRUE,
                         width = 12,
-                        textOutput("text3")
+                        tags$figure(align = "center",
+                                    tags$img(src = "tft_set7.jpg",width = 600),
+                        ),
+                        p(),
+                        p("Teamfight Tactics Season 7 is live, and it is about Dragonlands. The seventh season takes place in the dragon realms where clans compete for power across various islands, each worshipping their own powerful ancient dragons locked behind the mysteries of dormant shrines. New champions, traits, items, and a new way to play TFT."),
+                        ),
+                    
+                    box(title = "About us", status = "warning", 
+                        solidHeader = TRUE, 
+                        collapsible = TRUE,
+                        width = 12,
+                        p("Group member: Zhiruo Wang, Ziqi Xiao, Jiashu Yue, Andy Yu"),
+                        p("We are Carey students from BARM and IS major, being new generations and new graduates, we are aware of the importance of data in today’s world. Instead of visualizing traditional fields, this time we decide to work on a game we all play: League of legends We believe in the power of passion, and we also hope you have fun on this journey.
+")
                        )
                     ),
             
@@ -56,45 +85,54 @@ ui <- dashboardPage(
                       title = "Champion information",
                       id = "tabset1",
                       width = 12,
-                      tabPanel("1 cost", "First tab content"),
-                      tabPanel("2 cost", "Tab content 2"),
-                      tabPanel("3 cost", "First tab content"),
-                      tabPanel("4 cost", "First tab content"),
-                      tabPanel("5 cost", "First tab content")
+                      tabPanel("1 cost",
+                               dataTableOutput("cost_1_Table")
+                               ),
+      
+                      tabPanel("2 cost", 
+                               dataTableOutput("cost_2_Table")
+                               ),
+                      
+                      tabPanel("3 cost", 
+                               dataTableOutput("cost_3_Table")
+                               ),
+                      
+                      tabPanel("4 cost", 
+                               dataTableOutput("cost_4_Table")
+                               ),
+                      
+                      tabPanel("5 cost", 
+                               dataTableOutput("cost_5_Table")
+                               )
                     )
             ),
             tabItem(tabName = "subpage2",
+                    selectInput("var", 
+                                label = "Choose a synergy to display",
+                                choices = list("Classes", 
+                                               "Origins"),
+                                selected = "Classes"),
+                    dataTableOutput("synergy_Table")
+            ),
+            tabItem(tabName = "page3",
                     fluidRow(
-                      valueBoxOutput("rate"),
                       valueBoxOutput("count"),
                       valueBoxOutput("users")
                     ),
                     fluidRow(
                       box(
                         width = 8, status = "info", solidHeader = TRUE,
-                        title = "Popularity by items"
-                        #bubblesOutput("packagePlot", width = "100%", height = 600)
+                        title = "Popularity by synergy",
+                        bubblesOutput("synergyPlot", width = "100%", height = 600)
                       ),
                       box(
                         width = 4, status = "info",
-                        title = "Top items",
-                        #tableOutput("packageTable")
+                        title = "Top synergy",
+                        dataTableOutput("synergyTable")
                       ),
                     )
-            ),
-            tabItem(tabName = "subpage3",
-                    selectInput("var", 
-                                label = "Choose a synergy to display",
-                                choices = list("Classes", 
-                                               "Origins"),
-                                selected = "Classes"),
-                    textOutput("synergy_text", container = tags$h3)
-            ),
-            tabItem(tabName = "page3",
-                    leafletOutput("myMap", width="100%")
                     ),
-            tabItem(tabName = "page4",
-                    dataTableOutput("table1"))
+            tabItem(tabName = "page4")
         )
     )
 )
@@ -102,46 +140,85 @@ ui <- dashboardPage(
 
 server <- function(input, output, session) {
 
-  # learn how to make the searchbar work later
-  # input$searchText
-  # input$searchButton
-    
-  output$rate <- renderValueBox({
-    valueBox(
-      value = 25,
-      subtitle = "Downloads per sec",
-      icon = icon("area-chart"),
-    )
-  })
+  #read data
+  data_1 = data %>%
+    select(starts_with('Set7'))
   
-  output$count <- renderValueBox({
-    valueBox(
-      value = 50,
-      subtitle = "Total items",
-      icon = icon("download")
-    )
-  })
+  synergy<- names(data_1)
+  frequency_synergy <- colSums(!is.na(data_1))
+  df <- data.frame(synergy,frequency_synergy)
   
-  output$users <- renderValueBox({
-    valueBox(
-      value = 1000,
-      subtitle = "Sample",
-      icon = icon("users")
+
+    # page 2 - 1
+    output$cost_1_Table = renderDataTable(
+      datatable(data_champion,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
     )
-  })
     
-    output$text1 = renderText("tft")
+    output$cost_2_Table = renderDataTable(
+      datatable(data_champion,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
     
-    output$text2 = renderText("Source:")
+    output$cost_3_Table = renderDataTable(
+      datatable(data_champion,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
     
-    output$text3 = renderText("Zhiruo Wang, Yuejia Shu, Lisa Xiao, Andy Yu")
+    output$cost_4_Table = renderDataTable(
+      datatable(data_champion,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
+    output$cost_5_Table = renderDataTable(
+      datatable(data_champion,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
     
-    output$synergy_text = renderText({
-          if (input$var == "Classes")
-          {paste("Assassin")}
+    # page 2-2
+    output$synergy_Table = renderDataTable(
+      
+      if (input$var == "Classes")
+      {datatable(data_champion,
+                 options = list(scrollX = TRUE), 
+                 rownames= FALSE)}
       else
-          {paste("Astral")}
-          })
+      {datatable(data_trait,
+                 options = list(scrollX = TRUE), 
+                 rownames= FALSE)}
+    )
+    
+    # page 3
+    output$count <- renderValueBox({
+      valueBox(
+        value = 28,
+        subtitle = "Total Synergies",
+        icon = icon("area-chart")
+      )
+    })
+    
+    output$users <- renderValueBox({
+      valueBox(
+        value = 1441,
+        subtitle = "Sample Games",
+        icon = icon("users")
+      )
+    })
+    
+    output$synergyPlot = renderBubbles({
+      bubbles(df$frequency_synergy, df$synergy,width = "600px", height = "600px")
+    })
+    
+    # page 4
+    output$synergyTable = renderDataTable(
+      datatable(df,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
 
 }
 
