@@ -7,8 +7,12 @@ library(plotly)
 
 
 # read data
-data = read.csv("euw1_challengers_12.12.450.4196_matches.csv")
+data_eu = read.csv("euw1_challengers_12.12.450.4196_matches.csv")
+data_kr = read.csv("kr_challengers_12.12.450.4196_matches.csv")
+data_oc = read.csv("oc1_challengers_12.12.450.4196_matches.csv")
+
 data_champion = read.csv("TFT-Champions.csv")
+data_class = read.csv("TFT_Classes.csv")
 data_trait = read.csv("Champtrait.csv")
 
 # UI part
@@ -38,7 +42,7 @@ ui <- dashboardPage(
                         collapsible = TRUE,
                         width = 12,
                         tags$figure(align = "center",
-                                    tags$img(src = "tft_set7.jpg",width = 600),
+                                    tags$img(src = "tft.jpg",width = 600),
                                    ),
                         p(),
                         p("Welcome to our Teamfight Tactics Helper for Season 7, Dragonlands."),
@@ -52,7 +56,7 @@ ui <- dashboardPage(
                         collapsible = TRUE,
                         width = 12,
                         tags$figure(align = "center",
-                                    tags$img(src = "tft_set7.jpg",width = 600),
+                                    tags$img(src = "tft_2.jpg",width = 600),
                         ),
                         p(),
                         p("Teamfight Tactics (TFT) is an auto battler game developed and published by Riot Games. The game is a spinoff of League of Legends and is based on Dota Auto Chess, where players compete online against seven other opponents by building a team to be the last one standing."),
@@ -103,7 +107,15 @@ ui <- dashboardPage(
                       
                       tabPanel("5 cost", 
                                dataTableOutput("cost_5_Table")
-                               )
+                               ),
+                      
+                      tabPanel("8 cost", 
+                               dataTableOutput("cost_8_Table")
+                      ),
+                      
+                      tabPanel("10 cost", 
+                               dataTableOutput("cost_10_Table")
+                      )
                     )
             ),
             tabItem(tabName = "subpage2",
@@ -116,6 +128,9 @@ ui <- dashboardPage(
             ),
             tabItem(tabName = "page3",
                     fluidRow(
+                      valueBox("Choose a country",selectInput("test",label = " ",
+                                                                     choices = list("Europe","Korean","Other Countries"),
+                                                                     selected = "Europe")),
                       valueBoxOutput("count"),
                       valueBoxOutput("users")
                     ),
@@ -140,50 +155,73 @@ ui <- dashboardPage(
 
 server <- function(input, output, session) {
 
-  #read data
-  data_1 = data %>%
-    select(starts_with('Set7'))
-  
-  synergy<- names(data_1)
-  frequency_synergy <- colSums(!is.na(data_1))
-  df <- data.frame(synergy,frequency_synergy)
-  
+datasetInput = reactive({
+  if (input$test == "Europe")
+    {data = data_eu}
+  else if (input$test == "Korean")
+    {data = data_kr}
+  else 
+    {data = data_oc}
+  }) 
 
+  
+  
+  champion_1 = data_champion %>% filter(Cost == "1")
+  champion_2 = data_champion %>% filter(Cost == "2")
+  champion_3 = data_champion %>% filter(Cost == "3")
+  champion_4 = data_champion %>% filter(Cost == "4")
+  champion_5 = data_champion %>% filter(Cost == "5")
+  champion_8 = data_champion %>% filter(Cost == "8")
+  champion_10 = data_champion %>% filter(Cost == "10")
+  
     # page 2 - 1
     output$cost_1_Table = renderDataTable(
-      datatable(data_champion,
+      datatable(champion_1,
                 options = list(scrollX = TRUE), 
                 rownames= FALSE)
     )
     
     output$cost_2_Table = renderDataTable(
-      datatable(data_champion,
+      datatable(champion_2,
                 options = list(scrollX = TRUE), 
                 rownames= FALSE)
     )
     
     output$cost_3_Table = renderDataTable(
-      datatable(data_champion,
+      datatable(champion_3,
                 options = list(scrollX = TRUE), 
                 rownames= FALSE)
     )
     
     output$cost_4_Table = renderDataTable(
-      datatable(data_champion,
+      datatable(champion_4,
                 options = list(scrollX = TRUE), 
                 rownames= FALSE)
     )
     output$cost_5_Table = renderDataTable(
-      datatable(data_champion,
+      datatable(champion_5,
                 options = list(scrollX = TRUE), 
                 rownames= FALSE)
     )
+    
+    output$cost_8_Table = renderDataTable(
+      datatable(champion_8,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
+    
+    output$cost_10_Table = renderDataTable(
+      datatable(champion_10,
+                options = list(scrollX = TRUE), 
+                rownames= FALSE)
+    )
+    
     
     # page 2-2
     output$synergy_Table = renderDataTable(
       
       if (input$var == "Classes")
-      {datatable(data_champion,
+      {datatable(data_class,
                  options = list(scrollX = TRUE), 
                  rownames= FALSE)}
       else
@@ -197,28 +235,63 @@ server <- function(input, output, session) {
       valueBox(
         value = 28,
         subtitle = "Total Synergies",
-        icon = icon("area-chart")
+        icon = icon("area-chart"),
+        color = "teal"
       )
     })
     
     output$users <- renderValueBox({
+      #read data
+      data_1 = datasetInput() %>%
+        select(starts_with('Set7'))
+      
+      synergy<- names(data_1)
+      frequency_synergy <- colSums(!is.na(data_1))
+      df <- data.frame(synergy,frequency_synergy)
+      df <- df %>% arrange(desc(frequency_synergy))
+      
+      
       valueBox(
-        value = 1441,
-        subtitle = "Sample Games",
-        icon = icon("users")
+        value = nrow(data_1),
+        subtitle = "Samples",
+        icon = icon("users"),
+        color = "olive" #red, yellow, aqua, blue, light-blue, green, navy, teal, olive, lime, orange, fuchsia, purple, maroon, black.
       )
     })
     
     output$synergyPlot = renderBubbles({
-      bubbles(df$frequency_synergy, df$synergy,width = "600px", height = "600px")
+      #read data
+      data_1 = datasetInput() %>%
+        select(starts_with('Set7'))
+      
+      synergy<- names(data_1)
+      frequency_synergy <- colSums(!is.na(data_1))
+      df <- data.frame(synergy,frequency_synergy)
+      df <- df %>% arrange(desc(frequency_synergy))
+      
+      #bubble chart
+      bubbles(df$frequency_synergy, df$synergy,
+              width = "600px", 
+              height = "600px",
+              color = rainbow(28, alpha=NULL)
+              )
     })
     
-    # page 4
-    output$synergyTable = renderDataTable(
+    output$synergyTable = renderDataTable({
+      #read data
+      data_1 = datasetInput() %>%
+        select(starts_with('Set7'))
+      
+      synergy<- names(data_1)
+      frequency_synergy <- colSums(!is.na(data_1))
+      df <- data.frame(synergy,frequency_synergy)
+      df <- df %>% arrange(desc(frequency_synergy))
+      
+      #display the table
       datatable(df,
                 options = list(scrollX = TRUE), 
                 rownames= FALSE)
-    )
+      })
 
 }
 
