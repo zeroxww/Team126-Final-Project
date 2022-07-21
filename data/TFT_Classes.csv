@@ -1,0 +1,27 @@
+﻿Class,Description,number,level_1,Level_2,Level_3,Level_4,Level_5
+Assassin,"Innate: When combat starts, Assassins leap to the enemy backline.
+
+Assassins' Abilities can critically strike and they gain bonus Critical Strike Chance and bonus Critical Strike Damage.",2.4.6,(2) +15% Crit Chance and +5% Crit Damage,(4) +30% Crit Chance and +25% Crit Damage,(6) +45% Crit Chance and +45% Crit Damage,,
+Bard," Allies that survive player combat have a 2% chance to create a Doot. Bard always creates a Doot when dancing.
+
+Each Doot you collect increases your Shop odds for higher-tier champions by 1%.",1,Each Doot you collect increases your Shop odds for higher-tier champions by 1%.,,,,
+Bruiser,Your team gains bonus maximum Health. Bruisers gain double this bonus.,2.4.6.8,200 Health,325 Health,450 Health,700 Health,
+Cannoneer,Every 5th attack fires a cannon shot that explodes for physical damage around the target.,2.3.4.5,125% Attack Damage,225% Attack Damage,325% Attack Damage,425% Attack Damage,
+Cavalier,"Innate: Charge quickly towards their target whenever they move.
+
+Cavaliers gain Armor and Magic Resist. At the start of combat and after each charge, gain double the amount for 4 seconds.",2.3.4.5,"40 Armor, 40 Magic Resist","60 Armor, 60 Magic Resist","80 Armor, 80 Magic Resist","100 Armor, 100 Magic Resist",
+ Dragon,"(1) Dragons provide +3 to the marked trait, but require 2 team slots. They also gain 700 bonus Health.This trait is active with exactly 1 Dragon champion.",1,"Dragons provide +3 to the marked trait, but require 2 team slots. They also gain 700 bonus Health.",,,,
+ Dragonmancer,"Use the Dragonmancer Blessing item to choose a Hero. The Hero gains massively increased Health and Ability Power, which increases by 20% per star level of your Dragonmancers.","3.6,9","""+300 Health, +15 Ability Power","""+750 Health, +35 Ability Power","""+1400 Health, +60 Ability Power",,
+Evoker,Evokers gain Mana whenever an ally or enemy casts an Ability.,2.4.6,3 Mana,7 Mana,12 Mana,,
+ Guardian,"Once per combat at 50% Health, Guardians shield themselves and their closest ally for a percent of their maximum Health. Shields stack!",2.4.6, 30% of max health shield,45% of max health shield,65% of max health shield,,
+Legend,"(3) Each combat: An adjacent ally sacrifices their life to the Legend, which gains 100% of their Health, Armor, and Magic Resistance, plus 40% of their Ability Power.",3,"(3) Each combat: An adjacent ally sacrifices their life to the Legend, which gains 100% of their Health, Armor, and Magic Resistance, plus 40% of their Ability Power.",,,,
+ Mage,Mages cast twice and have modified total Ability Power.,"3,5,7,9",75% Ability Power,100% Ability Power, 125% Ability Power,150% Ability Power,
+ Mystic,Your team gains Magic Resist.,2.3.4.5,50 Magic Resist, 100 Magic Resist,175 Magic Resist,300 Magic Resist,
+ Shapeshifter,Transforming grants bonus maximum Health.,2.4.6,40% bonus Health,90% bonus Health,145% bonus Health,,
+Spell Thief,(1) Nab a new Ability after each cast and at the start of every round.,1,(1) Nab a new Ability after each cast and at the start of every round.,,,,
+ Starcaller,"1) The first Starcaller to cast their Ability during player combat heals you for (2/3/75), depending on their star level. Excess healing disintegrates an enemy champion.",1,"1) The first Starcaller to cast their Ability during player combat heals you for (2/3/75), depending on their star level. Excess healing disintegrates an enemy champion.",,,,
+Swiftshot,"Innate: gain 2 hex Attack Range.
+
+Swhiftshots gain Attack Speed for each hex between themselves and their target.","2,4,6", 10% Attack Speed,20% Attack Speed,40% Attack Speed,,
+Warrior,Warrior attacks have a 33% chance to increase the damage of their next attack.,2.4.6,"""+120% damage","""+220% damage","""+420% damage",,
+,Swhiftshots gain Attack Speed for each hex between themselves and their target.,,,,,,
